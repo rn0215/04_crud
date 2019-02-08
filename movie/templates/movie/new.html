@@ -1,0 +1,69 @@
+{% extends "movie/base.html" %}
+{% block bb %}
+
+<form action= "/movies/create/" method="post">
+    {% csrf_token %}
+    <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputEmail4">영화명</label>
+      <input type="text" class="form-control" placeholder="title" name="title">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputEmail4">영화명(영문)</label>
+      <input type="text" class="form-control" placeholder="title_en" name="title_en">
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="inputEmail4">누적관객수</label>
+      <input type="text" class="form-control" placeholder="audience" name="audience">
+    </div>
+  <div class="form-group col-md-2">
+      <label for="inputEmail4">개봉일</label>
+      <input type="date" class="form-control" name="open_date">
+    </div>
+  <div class="form-group col-md-1">
+      <label for="inputEmail4">장르</label>
+      <input type="text" class="form-control" placeholder="genre" name="genre">
+    </div>
+  <div class="form-group col-md-1">
+      <label for="inputEmail4">관람등급</label>
+      <input type="text" class="form-control" placeholder="watch_grade" name="watch_grade">
+    </div>
+  <div class="form-group col-md-1">
+      <label for="inputEmail4">평점</label>
+      <input type="text" class="form-control" placeholder="score" name="score">
+    </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">포스터 이미지URL</label>
+      <input type="text" class="form-control" placeholder="poster_url" name="poster_url">
+    </div>
+    <div class="form-group">
+    <label for="description">설명</label>
+    <textarea class="form-control" name="description" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">제출</button>
+    
+    
+    
+    
+    
+    
+    
+<!--    <input type="text" name="title" value="영화명"/>-->
+<!--    <input type="text" name="title_en" value="영화명(영문)"/>-->
+<!--    <input type="text" name="audience" value="누적관객수"/>-->
+<!--    <input type="date" name="open_date" value="개봉일"/>-->
+<!--    <input type="text" name="genre" value="장르"/>-->
+<!--    <input type="text" name="watch_grade" value="관람등급"/>-->
+<!--    <input type="text" name="score" value="평점"/>-->
+<!--    <input type="text" name="poster_url" value="포스터 이미지URL"/>-->
+<!--    <br>-->
+<!--    <div class="form-group">-->
+<!--    <label for="description">설명</label>-->
+<!--    <textarea class="form-control" name="description" rows="3"></textarea>-->
+<!--  </div>-->
+<!--    <input type="submit" value="제출"/>-->
+<!--</form>-->
+{% endblock %}

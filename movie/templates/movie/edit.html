@@ -1,0 +1,70 @@
+{% extends "movie/base.html" %}
+{% block bb %}
+
+<form action= "/movies/{{movie.id}}/update/" method="post">
+ 
+ 
+     {% csrf_token %}
+    <div class="d-flex justify-content-center">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">영화명</label>
+          <input type="text" class="form-control" placeholder="title" name="title" value="{{movie.title}}">
+        </div>
+    <div class="form-group col-md-3">
+          <label for="inputEmail4">영화명(영문)</label>
+          <input type="text" class="form-control" placeholder="title_en" name="title_en" value="{{movie.title_en}}" >
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="inputEmail4">누적관객수</label>
+          <input type="text" class="form-control" placeholder="audience" name="audience" value="{{movie.audience}}">
+        </div>
+      <div class="form-group col-md-2">
+          <label for="inputEmail4">개봉일</label>
+          <input type="date" class="form-control" name="open_date" value="{{movie.open_date|date:'Y-m-d'}}">
+        </div>
+      <div class="form-group col-md-1">
+          <label for="inputEmail4">장르</label>
+          <input type="text" class="form-control" placeholder="genre" name="genre" value="{{movie.genre}}">
+        </div>
+      <div class="form-group col-md-1">
+          <label for="inputEmail4">관람등급</label>
+          <input type="text" class="form-control" placeholder="watch_grade" name="watch_grade" value="{{movie.watch_grade}}">
+        </div>
+      <div class="form-group col-md-1">
+          <label for="inputEmail4">평점</label>
+          <input type="text" class="form-control" placeholder="score" name="score" value="{{movie.score}}">
+        </div>
+    </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">포스터 이미지URL</label>
+          <input type="text" class="form-control" placeholder="poster_url" name="poster_url" value="{{movie.poster_url}}">
+        </div>
+        <div class="form-group">
+        <label for="description">설명</label>
+        <textarea class="form-control" name="description" rows="3">{{movie.description}}</textarea>
+      </div>
+      
+  <button type="submit" class="btn btn-primary">제출</button>
+ </form>
+ 
+ 
+ 
+<!--    {% csrf_token %}-->
+<!--    <input type="text" name="title" value="{{movie.title}}"/>-->
+<!--    <input type="text" name="title_en" value="{{movie.title_en}}"/>-->
+<!--    <input type="text" name="audience" value="{{movie.audience}}"/>-->
+<!--    <input type="date" name="open_date" value="{{movie.open_date|date:'Y-m-d'}}"/>-->
+<!--    <input type="text" name="genre" value="{{movie.genre}}"/>-->
+<!--    <input type="text" name="watch_grade" value="{{movie.watch_grade}}"/>-->
+<!--    <input type="text" name="score" value="{{movie.score}}"/>-->
+<!--    <input type="text" name="poster_url" value="{{movie.poster_url}}"/>-->
+<!--    <br>-->
+<!--    <div class="form-group">-->
+<!--    <label for="description">설명</label>-->
+<!--    <textarea class="form-control" name="description" rows="3">{{movie.description}}</textarea>-->
+<!--  </div>-->
+<!--    <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--</form>-->
+{% endblock %}

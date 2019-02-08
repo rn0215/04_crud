@@ -1,0 +1,20 @@
+{% extends "movie/base.html" %}
+{% block bb %}
+<div class="card-group">
+{% for movie in movies %}
+<!--<h1><a href="/movies/{{movie.id}}">{{movie.title}}</a></h1>-->
+<!--<h3>{{movie.score}}</h3>-->
+
+<div class="card" style="width: 18rem;">
+  <img src="{{movie.poster_url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><a href="/movies/{{movie.id}}">{{movie.title}}</a></h5>
+    <p class="card-text">평점:{{movie.score}}</p>
+  </div>
+</div>
+
+
+
+{% endfor %}
+</div>
+{% endblock %}

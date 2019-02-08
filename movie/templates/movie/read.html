@@ -1,0 +1,18 @@
+{% extends "movie/base.html" %}
+{% block bb %}
+<h1>영화명:{{movie.title}}</h1>
+<h4>영화영어네임:{{movie.title_en}}</h4>
+<h4>영화번호:{{movie.audience}}</h4>
+<h4>출시일:{{movie.open_date}}</h4>
+<h4>{{movie.genre}}</h4>
+<h4>{{movie.watch_grade}}</h4>
+<h4>점수:{{movie.score}}</h4>
+<h4>포스터그림:{{movie.poster_url}}</h4>
+<h4>설명:{{movie.description}}</h4>
+
+<div class="form-low">
+<h5><a href="/movies/">목록</a></h5>
+<h5><a href="/movies/{{movie.id}}/edit/">수정</a></h5>
+<h5><a href="/movies/{{movie.id}}/delete/">삭제</a></h5>
+</div>
+{% endblock %}
